@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rahul Das — Resume | Senior AI/ML Engineer &amp; Data Scientist</title>
+  <style>
+    :root {
+      --ink: #111827;
+      --ink-secondary: #374151;
+      --muted: #4b5563;
+      --accent: #1d4ed8;
+      --rule: #cbd5e1;
+      --bg-page: #ffffff;
+      --bg-shell: #f1f5f9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg-shell);
+      color: var(--ink);
+      font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+      font-size: 8.85pt;
+      line-height: 1.29;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid #1e293b;
+      font-size: 13px;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .tbtn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 12.5px;
+      border: 1px solid #334155;
+      background: #1e293b;
+      color: #f8fafc;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .tbtn.primary {
+      background: #2563eb;
+      border-color: #2563eb;
+      color: #fff;
+    }
+
+    .sheet {
+      width: 8.5in;
+      min-height: 11in;
+      margin: 22px auto;
+      background: var(--bg-page);
+      padding: 0.34in 0.44in;
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.14);
+    }
+
+    /* Header */
+    .resume-header {
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 7px;
+      margin-bottom: 7px;
+    }
+
+    .resume-name {
+      font-size: 19pt;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      color: var(--ink);
+      line-height: 1.08;
+    }
+
+    .resume-headline {
+      font-size: 9.4pt;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    .contact-row {
+      margin-top: 4px;
+      font-size: 8.45pt;
+      color: var(--ink-secondary);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px 8px;
+      align-items: center;
+    }
+
+    .sep {
+      color: #9ca3af;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 6.5px;
+    }
+
+    .sec-title {
+      font-size: 9.6pt;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 1.5px;
+      margin-bottom: 4.5px;
+      break-after: avoid;
+    }
+
+    .summary-text {
+      color: var(--ink-secondary);
+      font-size: 8.75pt;
+      line-height: 1.31;
+      text-align: justify;
+    }
+
+    /* Skills */
+    .skills-list {
+      list-style: none;
+      display: grid;
+      gap: 2px;
+    }
+
+    .skills-list li {
+      font-size: 8.55pt;
+      color: var(--ink-secondary);
+      line-height: 1.28;
+    }
+
+    .skills-list strong {
+      color: var(--ink);
+    }
+
+    /* Experience & Projects */
+    .entry {
+      margin-bottom: 5.5px;
+      break-inside: avoid;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .entry-title {
+      font-size: 9.15pt;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .entry-sub {
+      font-size: 8.7pt;
+      font-weight: 600;
+      color: var(--ink-secondary);
+    }
+
+    .entry-meta {
+      font-size: 8.4pt;
+      font-weight: 600;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .entry-links {
+      font-size: 8.2pt;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .bullets {
+      margin-top: 2px;
+      padding-left: 14px;
+      display: grid;
+      gap: 1.5px;
+    }
+
+    .bullets li {
+      font-size: 8.55pt;
+      color: var(--ink-secondary);
+      line-height: 1.27;
+    }
+
+    .bullets strong {
+      color: var(--ink);
+    }
+
+    .project-tech {
+      font-size: 8.25pt;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+
+    .project-tech strong {
+      color: var(--ink-secondary);
+    }
+
+    .page-break-before {
+      break-before: page;
+    }
+
+    .edu-grid {
+      display: grid;
+      gap: 4.5px;
+    }
+
+    .cert-line {
+      font-size: 8.55pt;
+      color: var(--ink-secondary);
+      line-height: 1.3;
+    }
+
+    @page {
+      size: letter;
+      margin: 0.32in 0.44in;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .sheet {
+        width: auto;
+        min-height: auto;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar no-print">
+    <div><strong>Rahul Das — Improved Resume</strong> (2-Page ATS Format)</div>
+    <div class="toolbar-actions">
+      <a class="tbtn" href="./index.html">← Back to Portfolio</a>
+      <a class="tbtn" href="./assets/Rahul_Das_Resume.pdf" download="Rahul_Das_Resume.pdf">Download PDF</a>
+      <button class="tbtn primary" type="button" onclick="window.print()">Print / Save PDF</button>
+    </div>
+  </div>
+
+  <main class="sheet">
+    <!-- Header -->
+    <header class="resume-header">
+      <div class="resume-name">RAHUL DAS</div>
+      <div class="resume-headline">
+        Senior AI/ML Engineer &amp; Data Scientist &nbsp;|&nbsp; Generative AI, Agentic AI, Computer Vision, Systems &amp; Advanced SQL
+      </div>
+      <div class="contact-row">
+        <a href="tel:+917908979093">+91-7908979093</a>
+        <span class="sep">|</span>
+        <a href="mailto:rforrahul.rd@gmail.com">rforrahul.rd@gmail.com</a>
+        <span class="sep">|</span>
+        <a href="https://www.linkedin.com/in/rahul-das-9533a1195" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="sep">|</span>
+        <a href="https://github.com/10JERRY01" target="_blank" rel="noopener">github.com/10JERRY01</a>
+        <span class="sep">|</span>
+        <a href="https://10jerry01.github.io/Portfolio-/" target="_blank" rel="noopener">Portfolio</a>
+      </div>
+      <div class="contact-row" style="margin-top:2px;">
+        <span><strong>Location:</strong> Rampurhat, West Bengal (Open to Pan-India Relocation &amp; Remote)</span>
+      </div>
+    </header>
+
+    <!-- Summary -->
+    <section>
+      <h2 class="sec-title">Professional Summary</h2>
+      <p class="summary-text">
+        Versatile, results-driven Senior AI/ML Engineer and Data Scientist with <strong>5 years of experience</strong> spanning Generative AI, Agentic Workflows, Computer Vision, Local LLM Systems, and Advanced Data Analytics. Proven track record of architecting stateful <strong>LangGraph</strong> multi-agent pipelines, engineering production <strong>RAG</strong> systems, building custom AI-native Linux distributions (<strong>Jarvis OS</strong>), and deploying low-latency Python/C++ vision pipelines. Highly proficient in <strong>Python, C++, Go, and Advanced SQL</strong>, bridging data science and scalable backend engineering (FastAPI, PySpark, Docker, Microservices) to drive measurable business impact.
+      </p>
+    </section>
+
+    <!-- Core Competencies -->
+    <section>
+      <h2 class="sec-title">Core Competencies &amp; Technical Skills</h2>
+      <ul class="skills-list">
+        <li><strong>Generative AI &amp; Agentic LLMs:</strong> Agentic AI, RAG (Retrieval-Augmented Generation), LangGraph, LangChain, LlamaIndex, OpenAI &amp; Gemini APIs, Local GGUF LLMs (Bonsai 27B), Prompt Engineering, Vector DBs (Pinecone, Qdrant, ChromaDB, FAISS, Redis).</li>
+        <li><strong>Machine Learning &amp; Data Science:</strong> PyTorch, TensorFlow, Scikit-Learn, XGBoost, Predictive Modeling, NLP &amp; Transformers, Time-Series / NILM Disaggregation, K-Means &amp; PCA, A/B Testing (Statsmodels, SciPy), Statistical Analysis.</li>
+        <li><strong>Computer Vision &amp; Systems:</strong> Object Detection &amp; Tracking, YOLOv8, OpenCV, Video Intelligence, C++ (ctypes/DLL), Go, Debian Linux &amp; Liquorix Kernel, KDE Plasma 6, SQLite FTS5, FFmpeg / HLS Streaming.</li>
+        <li><strong>Data Engineering &amp; Analytics:</strong> Advanced SQL (Window Functions, CTEs, Cross Joins), PySpark &amp; Spark SQL, Apache Arrow &amp; Parquet, Medallion ETL Pipelines, EDA Fundamentals, Pandas, NumPy, Plotly, Power BI, Tableau.</li>
+        <li><strong>Backend, Cloud &amp; MLOps:</strong> Python, FastAPI, Flask, WebSockets, REST APIs, Microservices, Asyncio, Docker, Kubernetes, GCP Cloud Run, AWS, GitHub Actions CI/CD.</li>
+      </ul>
+    </section>
+
+    <!-- Professional Experience -->
+    <section>
+      <h2 class="sec-title">Professional Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div><span class="entry-title">Indium Software</span> &nbsp;—&nbsp; <span class="entry-sub">AI/ML Engineer (Consultant)</span></div>
+          <span class="entry-meta">2025 – Present</span>
+        </div>
+        <ul class="bullets">
+          <li>Architect and deploy enterprise-grade Generative AI and RAG applications utilizing Python, LangChain, and Vector DBs to automate knowledge retrieval and contextual data analysis.</li>
+          <li>Develop autonomous AI Agents capable of multi-step reasoning, planning, and tool execution using LangGraph, deployed as scalable asynchronous microservices via FastAPI and WebSockets.</li>
+          <li>Write and optimize complex SQL queries to extract, clean, and analyze multi-dimensional datasets, establishing single sources of truth for enterprise analytics.</li>
+          <li>Deploy real-time computer vision monitoring pipelines, optimizing inference models for low latency and high accuracy across cloud and edge environments.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div><span class="entry-title">Outlier.ai</span> &nbsp;—&nbsp; <span class="entry-sub">LLM Evaluation Specialist</span></div>
+          <span class="entry-meta">2025</span>
+        </div>
+        <ul class="bullets">
+          <li>Architected deep learning workflows and computer vision prototypes, translating algorithmic research into functional enterprise software solutions.</li>
+          <li>Executed feature engineering and statistical analytics on large-scale unstructured repositories using Python and Advanced SQL for model training preparation.</li>
+          <li>Managed Large Language Model (LLM) evaluation, RLHF/alignment rubrics, and fine-tuning protocols to ensure contextual accuracy and reasoning reliability.</li>
+          <li>Partnered within agile engineering teams to deploy scalable NLP frameworks driving automation across customer intelligence and document processing.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div><span class="entry-title">Freelance Software Consulting</span> &nbsp;—&nbsp; <span class="entry-sub">AI and Data Engineer</span></div>
+          <span class="entry-meta">2025</span>
+        </div>
+        <ul class="bullets">
+          <li>Partnered with stakeholders to translate ambiguous business requirements into end-to-end Machine Learning, Data Analytics, and Cloud solutions.</li>
+          <li>Built reusable AI workflows, automated ETL pipelines, and interactive analytics dashboards enabling data-driven operational efficiency.</li>
+          <li>Architected and administered production SQL databases and custom business software applications end-to-end.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div><span class="entry-title">Cognizant</span> &nbsp;—&nbsp; <span class="entry-sub">Programmer Analyst (Data &amp; ML Engineering)</span></div>
+          <span class="entry-meta">Sep 2021 – Nov 2023</span>
+        </div>
+        <ul class="bullets">
+          <li>Engineered scalable backend pipelines and relational data infrastructure, maintaining complex SQL databases and ensuring high data availability for downstream ML and analytics workloads.</li>
+          <li>Conducted rigorous Exploratory Data Analysis (EDA) on legacy system data to surface inconsistencies and guide architectural improvements.</li>
+          <li>Spearheaded end-to-end ETL processes to streamline data ingestion, transformation, and validation for production environments.</li>
+          <li>Collaborated with cross-functional product and DevOps teams to deliver automated workflows, resilient API endpoints, and secure enterprise integrations.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 2: Key Technical Projects, Education & Certifications -->
+    <section class="page-break-before">
+      <h2 class="sec-title">Key Technical Projects</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Jarvis OS (v1.0 Genesis · Debian Edition) — Dual-Environment Linux &amp; Offline 27B AI OS</div>
+          <div class="entry-links">
+            <a href="https://github.com/10JERRY01/Jarvis-os" target="_blank" rel="noopener">GitHub</a> ·
+            <a href="https://10JERRY01.github.io/Jarvis-os/" target="_blank" rel="noopener">Live Site</a>
+          </div>
+        </div>
+        <div class="project-tech"><strong>Tech:</strong> Python, Debian 12, Liquorix 1000Hz Kernel, KDE Plasma 6, Bonsai 27B GGUF, SQLite FTS5, AST RAG, Kokoro TTS, Docker</div>
+        <ul class="bullets">
+          <li>Engineered an open-source Debian 12 distribution featuring instant hotkey switching (<code>Meta+Shift+M</code>) between a 3D Jarvis Ambient Core and Apple Cupertino / Zen / Nordic / Cyber desktops while unloading LLM weights (<code>keep_alive: 0</code>) to reclaim 100% GPU VRAM.</li>
+          <li>Built an air-gapped cognitive stack (local Bonsai 27B, Total Recall FTS5, AST Code RAG, Kokoro TTS, Screen Vision, AI Smart Shell <code>??</code>) passing automated Wi-Fi-Off zero-telemetry drills and packaged into a CI-built <strong>1.58 GiB bootable hybrid ISO</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">EduAgent &amp; VoxAgent — Stateful Multi-Agent Coding Mentor &amp; Voice AI Assistant</div>
+          <div class="entry-links">
+            <a href="https://github.com/10JERRY01/EduAgent" target="_blank" rel="noopener">EduAgent</a> ·
+            <a href="https://github.com/10JERRY01/VoxAgent" target="_blank" rel="noopener">VoxAgent</a>
+          </div>
+        </div>
+        <div class="project-tech"><strong>Tech:</strong> Python, LangGraph, FastAPI, WebSockets, OpenAI Whisper, LlamaIndex, ChromaDB, Google Gemini, Pydantic, Docker</div>
+        <ul class="bullets">
+          <li><strong>EduAgent:</strong> Built a 3-node LangGraph <code>StateGraph</code> (<code>analyze → retrieve → mentor</code>) with <code>MemorySaver</code> isolation, Pydantic guardrails enforcing Socratic pedagogy (hint levels 1–3), and live WebSocket node streaming via <code>astream()</code>.</li>
+          <li><strong>VoxAgent:</strong> Architected an autonomous voice pipeline routing browser audio via Librosa 16 kHz resampling and Whisper STT through LangGraph conditional escalation, LlamaIndex + ChromaDB RAG, and in-memory Base64 gTTS playback.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Flock Energy — Smart Meter Cleaning &amp; Deep Learning NILM Disaggregation</div>
+          <div class="entry-links"><a href="https://github.com/10JERRY01/flock-energy-project" target="_blank" rel="noopener">GitHub</a></div>
+        </div>
+        <div class="project-tech"><strong>Tech:</strong> PyTorch (Seq2Point 1D-CNN), Python, Scikit-Learn, Apache Parquet, Streamlit</div>
+        <ul class="bullets">
+          <li>Built a reproducible 5-stage pipeline across 17 UK REFIT households (up to 648 days at 1-min resolution) featuring physics-aware hysteresis cycle extraction and zero-leakage cross-household validation across <strong>40,000+ unseen test minutes</strong>.</li>
+          <li>Reduced unseen-home MAE by <strong>62.9%–66.2%</strong> (187.27 W → 69.39 W on House 8; 150.27 W → 50.80 W on House 9), cut SAE energy error by <strong>73%–76%</strong>, and boosted F1 by <strong>+187%–233%</strong> over Ridge baselines.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">GenZ Well-Being &amp; Engagement Observatory Platform (1M-Record Telemetry)</div>
+          <div class="entry-links"><a href="https://github.com/10JERRY01/GenZ-Well-Being-And-Engagement-Observatory" target="_blank" rel="noopener">GitHub</a></div>
+        </div>
+        <div class="project-tech"><strong>Tech:</strong> Python, PyArrow, Snappy Parquet, Scikit-Learn (K-Means), Plotly, Streamlit</div>
+        <ul class="bullets">
+          <li>Compressed 116.9 MB CSV telemetry (1,000,000 users across 7 countries) into 22.8 MB Snappy Parquet via Apache Arrow (<strong>79.6% storage reduction</strong>) for sub-second in-memory OLAP querying and K-Means (K=4) segmentation.</li>
+          <li>Uncovered the ≥5.0 hr/day mental-health cliff (-0.781 pts/hr, R²=0.58) and platform parity, replacing a proposed 2h lockout that would have penalized 74.88% of healthy users (avoiding ~23% projected churn).</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Enterprise RAG, Knowledge Graph &amp; News Intelligence Systems</div>
+          <div class="entry-links">
+            <a href="https://github.com/10JERRY01/10JERRY01-Intelligent-Financial-Document-Insights-System-RAG-LLM" target="_blank" rel="noopener">Financial RAG</a> ·
+            <a href="https://github.com/10JERRY01/HCSC-Knowledge-Graph-Entity-Resolution" target="_blank" rel="noopener">HCSC KG</a> ·
+            <a href="https://nexus-ai-service-671408180579.us-central1.run.app" target="_blank" rel="noopener">Nexus AI Live</a>
+          </div>
+        </div>
+        <div class="project-tech"><strong>Tech:</strong> Python, PyTorch, LangChain, HuggingFace (all-MiniLM-L6-v2), Pinecone, FAISS, RDFLib/SPARQL, Docker, GCP Cloud Run</div>
+        <ul class="bullets">
+          <li>Engineered production RAG pipelines for annual financial filings (context-window guardrails eliminating hallucinations) and live news intelligence (<strong>Nexus AI</strong>, containerized via multi-stage Dockerfile and deployed on GCP Cloud Run).</li>
+          <li>Built <strong>HCSC Knowledge Graph</strong> resolving unstructured hospital invoices via LLM Pydantic schemas, SentenceTransformers cosine matching, and <code>rdflib</code> RDF/SPARQL ontological querying.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Workplace Video Intelligence &amp; Hybrid C++/Python CCTV System</div>
+          <div class="entry-links"><a href="https://github.com/10JERRY01/Workplace-Video-Intelligence-Tracking" target="_blank" rel="noopener">GitHub</a></div>
+        </div>
+        <div class="project-tech"><strong>Tech:</strong> Python, C++, YOLOv8, OpenCV, ctypes, SQLite, Seaborn</div>
+        <ul class="bullets">
+          <li>Developed a real-time restricted-zone intrusion pipeline pairing YOLOv8 with a compiled C++ OpenCV shared library integrated via <code>ctypes</code> for edge-grade latency, backed by SQLite logging and throttled SMTP alerting.</li>
+          <li>Conducted confidence-threshold distribution EDA eliminating <strong>90% of false positives</strong> in noisy simulated CCTV feeds.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Shiprocket Logistics &amp; A/B Testing Engine · PySpark Payment EDQ Pipeline</div>
+          <div class="entry-links">
+            <a href="https://github.com/10JERRY01/shiprocket-analytics" target="_blank" rel="noopener">Shiprocket</a> ·
+            <a href="https://github.com/10JERRY01/Enterprise_Payment_Data_Quality_and_Pricing_Engine" target="_blank" rel="noopener">Payment EDQ</a>
+          </div>
+        </div>
+        <div class="project-tech"><strong>Tech:</strong> Python, SQL (CTEs, Window Functions), Statsmodels, SciPy, PySpark, Flask, Chart.js</div>
+        <ul class="bullets">
+          <li>Analyzed Olist logistics delays with SQL CTEs/Window Functions and ran two-sample Z/T hypothesis testing across 110,000 sessions proving <strong>+12.52% conversion lift</strong> (z=4.33, p=7.29e-6); built a PySpark Bronze-Silver-Gold EDQ &amp; AML pricing pipeline.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Minimalist Torrent Extension · StreamGuard HLS &amp; LogSentinel</div>
+          <div class="entry-links">
+            <a href="https://chromewebstore.google.com/detail/bdmkboiedhlebnhdnabhdabhlhhnbieg" target="_blank" rel="noopener">Chrome Web Store</a> ·
+            <a href="https://github.com/10JERRY01/StreamGuard" target="_blank" rel="noopener">StreamGuard</a> ·
+            <a href="https://github.com/10JERRY01/LogSentinel" target="_blank" rel="noopener">LogSentinel</a>
+          </div>
+        </div>
+        <div class="project-tech"><strong>Tech:</strong> JavaScript, Chromium APIs, React 19, TypeScript, FastAPI, FFmpeg, Go, Isolation Forest</div>
+        <ul class="bullets">
+          <li>Published a Chromium extension featuring magnet URI interception, hover hash pre-flight auditing, live swarm telemetry, 4 dark themes, and strict client-side isolation; built <strong>StreamGuard</strong> (FFmpeg HLS + Video.js telemetry) and <strong>LogSentinel</strong> (Go ingestion + Isolation Forest).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <h2 class="sec-title">Education</h2>
+      <div class="edu-grid">
+        <div class="entry">
+          <div class="entry-head">
+            <div><span class="entry-title">Woolf Academy × Scaler Neoversity</span> &nbsp;—&nbsp; <span class="entry-sub">Advanced Data Science, AI &amp; Machine Learning Program</span></div>
+            <span class="entry-meta">Specialization</span>
+          </div>
+          <div class="project-tech"><strong>Core Focus:</strong> Deep Learning, GenAI &amp; LLM Orchestration, Computer Vision, MLOps, Statistical Analysis, EDA Fundamentals.</div>
+        </div>
+        <div class="entry">
+          <div class="entry-head">
+            <div><span class="entry-title">KIIT University, Bhubaneswar</span> &nbsp;—&nbsp; <span class="entry-sub">Bachelor of Technology in Computer Science Engineering</span></div>
+            <span class="entry-meta">Graduated 2021</span>
+          </div>
+          <div class="project-tech"><strong>Core Focus:</strong> Database Management (SQL), Data Structures &amp; Algorithms, Software Engineering, C/C++ Programming.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section>
+      <h2 class="sec-title">Certifications</h2>
+      <p class="cert-line">
+        <strong>Microsoft Certified:</strong> Azure Fundamentals (AZ-900), Azure AI Fundamentals (AI-900), Azure Data Fundamentals (DP-900), Security &amp; Compliance (SC-900) &nbsp;|&nbsp;
+        <strong>Google Cloud:</strong> Machine Learning Specialization (How Google Does ML, Feature Engineering, Art &amp; Science of ML) &nbsp;|&nbsp;
+        <strong>Scaler Academy:</strong> EDA, Advanced SQL, Python Libraries, Unsupervised Learning —
+        <a href="https://github.com/10JERRY01/Certificates" target="_blank" rel="noopener"><strong>Verify All Credentials on GitHub ↗</strong></a>
+      </p>
+    </section>
+  </main>
+</body>
+</html>
